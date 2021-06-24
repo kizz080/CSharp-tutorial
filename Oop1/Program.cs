@@ -2,27 +2,20 @@
 
 namespace Oop1
 {
-    class SP
+    class Person
     {
         private string _name;
-        
-        // public string FirstName;
-        // public string LastName;
+        private string _surname;
 
-        // public Person()
-        // {
-        //     Console.WriteLine("Default constructor called");
-        // }
-        
-        public (string name)
+        public Person(string name, string surname)
         {
-            // Console.WriteLine("Parametrised constructor called");
             _name = name;
+            _surname = surname;
         }
-        
+
         public override string ToString()
         {
-            return "The name of person is: " + _name;
+            return "The name of person is: " + _name + " The name of person is: " + _surname;
         }
     }
 
@@ -31,23 +24,19 @@ namespace Oop1
         static void Main(string[] args)
         {
             var people = new Person[3];
-            
+
             for (int i = 0; i < 3; i++)
             {
                 string name = Console.ReadLine();
-                
-                // var person =  new Person();
-                // person.Name = name;
-                
-                var person =  new Person(name);
-                
+                string surname = Console.ReadLine();
+                var person = new Person(name, surname);
                 people[i] = person;
             }
 
             for (int i = 0; i < 3; i++)
             {
                 Console.WriteLine(people[i].ToString());
-            } 
+            }
         }
     }
 }
